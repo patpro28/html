@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tmath</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <style>
+    .prose .emojione {
+      margin-top: 0;
+      margin-bottom: 0;
+      display: inline-flex;
+      height: 1.25rem;
+      vertical-align: text-top;
+    }
+  </style>
+  <link rel="stylesheet" href="FontAwesome/css/all.css"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dark-blue': '#03033b',
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" integrity="sha512-6FaAxxHuKuzaGHWnV00ftWqP3luSBRSopnNAA2RvQH1fOfnF/A1wOfiUWF7cLIOFcfb1dEhXwo5VG3DAisocRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <nav
+    class="fixed top-0 left-0 flex flex-col items-center w-24 h-full py-4 space-y-2 transition-all duration-500 ease-in-out bg-dark-blue lg:w-32">
+    <a href="#" class="">
+      <img src="https://c.tmath.vn/static/icons/logo.svg" alt="" />
+    </a>
+    <div
+      class="relative block w-16 py-3 text-center text-white transition-all duration-500 ease-in-out bg-indigo-600 rounded-md lg:w-24">
+      <a href="#" class="p-4">
+        <i class="text-xl fa-regular fa-book-open lg:text-2xl"></i>
+      </a>
+      <div
+        class="h-0 text-xs font-bold leading-5 uppercase transition-all duration-500 ease-in-out opacity-0 lg:h-fit lg:opacity-100">
+        Problems</div>
+    </div>
+    <div
+      class="relative block w-16 py-3 text-center text-white transition-all duration-500 ease-in-out rounded-md hover:bg-indigo-600/50 lg:w-24">
+      <a href="#" class="p-4">
+        <i class="text-xl fa-regular fa-table-list lg:text-2xl"></i>
+      </a>
+      <div
+        class="h-0 overflow-hidden text-xs font-bold leading-5 uppercase transition-all duration-500 ease-in-out opacity-0 lg:h-fit lg:opacity-100">
+        Submissions</div>
+    </div>
+    <div
+      class="relative block w-16 py-3 text-center text-white transition-all duration-500 ease-in-out rounded-md hover:bg-indigo-600/50 lg:w-24">
+      <a href="#" class="p-4">
+        <i class="text-xl fa-regular fa-users lg:text-2xl"></i>
+      </a>
+      <div
+        class="h-0 text-xs font-bold leading-5 uppercase transition-all duration-500 ease-in-out opacity-0 lg:h-fit lg:opacity-100">
+        Users</div>
+    </div>
+    <div
+      class="relative block w-16 py-3 text-center text-white transition-all duration-500 ease-in-out rounded-md hover:bg-indigo-600/50 lg:w-24">
+      <a href="#" class="p-4">
+        <i class="text-xl fa-regular fa-earth lg:text-2xl"></i>
+      </a>
+      <div
+        class="invisible h-0 text-xs font-bold leading-5 uppercase transition-all duration-500 ease-in-out opacity-0 lg:visible lg:h-fit lg:opacity-100">
+        Organizations</div>
+    </div>
+    <div
+      class="relative block w-16 py-3 text-center text-white transition-all duration-500 ease-in-out rounded-md hover:bg-indigo-600/50 lg:w-24">
+      <a href="#" class="p-4">
+        <i class="text-xl fa-regular fa-trophy lg:text-2xl"></i>
+      </a>
+      <div
+        class="h-0 text-xs font-bold leading-5 uppercase transition-all duration-500 ease-in-out opacity-0 lg:h-fit lg:opacity-100">
+        Contests</div>
+    </div>
+    <div
+      class="relative block w-16 py-3 text-center text-white transition-all duration-500 ease-in-out rounded-md group hover:bg-indigo-600/50 lg:w-24">
+      <a href="#" class="p-4">
+        <i class="text-xl fa-regular fa-circle-question lg:text-2xl"></i>
+      </a>
+      <div
+        class="h-0 text-xs font-bold leading-5 uppercase transition-all duration-500 ease-in-out opacity-0 lg:h-fit lg:opacity-100">
+        About</div>
+      <div
+        class="absolute flex flex-col items-start h-0 overflow-hidden transition-all duration-500 ease-in-out bg-indigo-900 divide-y rounded-lg opacity-0 group-hover:h-fit group-hover:opacity-100 top-1/2 group-hover:top-0 left-16 lg:left-24">
+        <a href="#" class="w-full px-4 py-3 text-left whitespace-nowrap"> Judge </a>
+        <a href="#" class="w-full px-4 py-3 text-left whitespace-nowrap"> Judge Judge</a>
+        <a href="#" class="w-full px-4 py-3 text-left whitespace-nowrap"> Judge </a>
+      </div>
+    </div>
+  </nav>
+  <main class="flex flex-col h-full ml-24 transition-all duration-500 ease-in-out bg-slate-100 lg:ml-32">
+    <div class="sticky top-0 z-50 flex items-center justify-between px-4 py-4 bg-white">
+      <div class="text-3xl font-bold">
+        Trang chủ
+      </div>
+      <div class="flex space-x-3">
+        <div class="flex items-center">
+          <a href=""
+            class="flex items-center justify-center w-10 h-10 text-center text-white rounded-full bg-dark-blue">
+            <i class="text-2xl fa-regular fa-plus"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3">
+      <div class="grid h-full grid-cols-1 col-span-2 gap-4 p-4 border-r basis-2/3">
+        <div class="flex items-center p-4 text-2xl text-white rounded-md bg-dark-blue">
+          <div class="flex-1 font-bold">
+            News
+          </div>
+          <i class="fa-regular fa-terminal"></i>
+        </div>
+        <div class="p-4 border rounded-lg border-dark-blue ">
+          <div class="flex flex-col text-3xl font-bold">
+            <a href="/post/6-trung-tam-giao-dc-tmath-edu-thong-bao-t-chc-contes">THÔNG BÁO: CUỘC THI LẬP TRÌNH THI ĐẤU
+              NGHỆ AN MỞ RỘNG LẦN THỨ NHẤT</a>
+            <div class="inline-flex items-center gap-1 text-base"><i class="star icon"></i> <span
+                data-iso="2022-08-31T01:56:05+00:00" class="time-with-rel" title="Aug. 31, 2022, 8:56 a.m."
+                data-format="posted {time}">posted 4 months ago</span><span class="comment-data">
+                <a href="/post/6-trung-tam-giao-dc-tmath-edu-thong-bao-t-chc-contes#comments"
+                  class="comment-count-link">
+                  <i class="fa-regular fa-comments"></i>
+                  <span class="comment-count">0</span>
+                </a>
+              </span>
+            </div>
+          </div>
+          <div class="p-2 prose max-w-none">
+            <div>
+              <p><noscript>&lt;img alt="👉" class="emojione"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f449.png"
+                  title=":point_right:"&gt;</noscript><img alt="👉" class="emojione unveil"
+                  data-src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f449.png"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f449.png"
+                  title=":point_right:"> <noscript>&lt;img alt="👉" class="emojione"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f449.png"
+                  title=":point_right:"&gt;</noscript><img alt="👉" class="emojione unveil"
+                  data-src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f449.png"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f449.png"
+                  title=":point_right:"> <noscript>&lt;img alt="👉" class="emojione"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f449.png"
+                  title=":point_right:"&gt;</noscript><img alt="👉" class="emojione unveil"
+                  data-src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f449.png"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f449.png"
+                  title=":point_right:"> Nhằm mục đích thúc đẩy phong trào học tập STEM cũng như có những trải nghiệm
+                thú vị về bộ môn tin học và lập trình thi đấu trên địa bàn tỉnh Nghệ An, Trung tâm Tmath Edu cùng các
+                cộng sự tổ chức kỳ thi lập trình thi đấu (Competitive Programming) với tên <strong>“Cuộc thi lập trình
+                  thi đấu Nghệ An mở rộng”</strong> lần thứ nhất. </p>
+              <p><noscript>&lt;img alt="👉" class="emojione"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f449.png"
+                  title=":point_right:"&gt;</noscript><img alt="👉" class="emojione unveil"
+                  data-src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f449.png"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f449.png"
+                  title=":point_right:"> <strong>Chủ trì cuộc thi:</strong></p>
+              <p><noscript>&lt;img alt="✔️" class="emojione"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2714.png"
+                  title=":heavy_check_mark:"&gt;</noscript><img alt="✔️" class="emojione unveil"
+                  data-src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2714.png"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2714.png"
+                  title=":heavy_check_mark:"> Ông Nguyễn Đức Toàn – trung tâm Tmath Edu.</p>
+              <p><noscript>&lt;img alt="✔️" class="emojione"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2714.png"
+                  title=":heavy_check_mark:"&gt;</noscript><img alt="✔️" class="emojione unveil"
+                  data-src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2714.png"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2714.png"
+                  title=":heavy_check_mark:"> Ông Trần Thanh Hiệp – chuyên viên Tin học Sở Giáo dục và Đào tạo Nghệ An.
+              </p>
+              <p><noscript>&lt;img alt="👉" class="emojione"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f449.png"
+                  title=":point_right:"&gt;</noscript><img alt="👉" class="emojione unveil"
+                  data-src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f449.png"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f449.png"
+                  title=":point_right:"> Tham gia cuộc thi, các thí sinh sẽ được: </p>
+              <ul>
+                <li><noscript>&lt;img alt="✅" class="emojione"
+                    src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png"
+                    title=":white_check_mark:"&gt;</noscript><img alt="✅" class="emojione unveil"
+                    data-src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png"
+                    src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png"
+                    title=":white_check_mark:"> Giao lưu học hỏi, kết nối với các học sinh toàn khu vực có cùng đam mê,
+                  hứng thú với bộ môn Tin học và lập trình thi đấu.</li>
+                <li><noscript>&lt;img alt="✅" class="emojione"
+                    src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png"
+                    title=":white_check_mark:"&gt;</noscript><img alt="✅" class="emojione unveil"
+                    data-src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png"
+                    src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png"
+                    title=":white_check_mark:"> Khơi gợi tính sáng tạo trong học tập, rèn luyện của học sinh.</li>
+                <li><noscript>&lt;img alt="✅" class="emojione"
+                    src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png"
+                    title=":white_check_mark:"&gt;</noscript><img alt="✅" class="emojione unveil"
+                    data-src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png"
+                    src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2705.png"
+                    title=":white_check_mark:"> Phát huy tinh thần học tập năng nổ, làm tiền đề để bước vào năm học mới
+                  đầy hứng khởi và hiệu quả.</li>
+              </ul>
+              <p><noscript>&lt;img alt="🔥" class="emojione"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f525.png"
+                  title=":fire:"&gt;</noscript><img alt="🔥" class="emojione unveil"
+                  data-src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f525.png"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f525.png" title=":fire:"> Hãy
+                đăng kí và tham gia ngay thôi!</p>
+              <p><noscript>&lt;img alt="👥" class="emojione"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f465.png"
+                  title=":busts_in_silhouette:"&gt;</noscript><img alt="👥" class="emojione unveil"
+                  data-src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f465.png"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f465.png"
+                  title=":busts_in_silhouette:">️ Đối tượng: Tất cả các bạn học sinh có đam mê với bộ môn Tin học và lập
+                trình thi đấu trong tỉnh Nghệ An và khu vực lân cận, mong muốn được trải nghiệm, giao lưu và học hỏi về
+                Tin học và lập trình thi đấu.</p>
+              <p><noscript>&lt;img alt="⏰" class="emojione"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/23f0.png"
+                  title=":alarm_clock:"&gt;</noscript><img alt="⏰" class="emojione unveil"
+                  data-src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/23f0.png"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/23f0.png" title=":alarm_clock:">
+                Thời gian và các bước tổ chức:</p>
+              <ul>
+                <li>Thí sinh đăng ký tham gia từ ngày <span class="arithmatex"><mjx-container
+                      class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="0"
+                      style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX"
+                        aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c><mjx-c
+                            class="mjx-c30"></mjx-c></mjx-mn><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c
+                              class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c
+                            class="mjx-c30"></mjx-c><mjx-c class="mjx-c38"></mjx-c></mjx-mn><mjx-texatom
+                          texclass="ORD"><mjx-mo class="mjx-n"><mjx-c
+                              class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c
+                            class="mjx-c32"></mjx-c><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c32"></mjx-c><mjx-c
+                            class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on"
+                        display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                          <mn>30</mn>
+                          <mrow data-mjx-texclass="ORD">
+                            <mo>/</mo>
+                          </mrow>
+                          <mn>08</mn>
+                          <mrow data-mjx-texclass="ORD">
+                            <mo>/</mo>
+                          </mrow>
+                          <mn>2022</mn>
+                        </math></mjx-assistive-mml></mjx-container></span> đến <span class="arithmatex"><mjx-container
+                      class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="1"
+                      style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX"
+                        aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c
+                            class="mjx-c32"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c
+                            class="mjx-c210E TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on"
+                        display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                          <mn>12</mn>
+                          <mi>h</mi>
+                        </math></mjx-assistive-mml></mjx-container></span> ngày <span class="arithmatex"><mjx-container
+                      class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="2"
+                      style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX"
+                        aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c30"></mjx-c><mjx-c
+                            class="mjx-c33"></mjx-c></mjx-mn><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c
+                              class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c
+                            class="mjx-c30"></mjx-c><mjx-c class="mjx-c39"></mjx-c></mjx-mn><mjx-texatom
+                          texclass="ORD"><mjx-mo class="mjx-n"><mjx-c
+                              class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c
+                            class="mjx-c32"></mjx-c><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c32"></mjx-c><mjx-c
+                            class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on"
+                        display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                          <mn>03</mn>
+                          <mrow data-mjx-texclass="ORD">
+                            <mo>/</mo>
+                          </mrow>
+                          <mn>09</mn>
+                          <mrow data-mjx-texclass="ORD">
+                            <mo>/</mo>
+                          </mrow>
+                          <mn>2022</mn>
+                        </math></mjx-assistive-mml></mjx-container></span>.</li>
+                <li>Thí sinh nhận thẻ dự thi từ <span class="arithmatex"><mjx-container
+                      class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="3"
+                      style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX"
+                        aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c
+                            class="mjx-c35"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c
+                            class="mjx-c210E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c
+                            class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c
+                            class="mjx-c31"></mjx-c><mjx-c class="mjx-c37"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c
+                            class="mjx-c210E TEX-I"></mjx-c></mjx-mi><mjx-mn class="mjx-n"><mjx-c
+                            class="mjx-c33"></mjx-c><mjx-c
+                            class="mjx-c30"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on"
+                        display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                          <mn>15</mn>
+                          <mi>h</mi>
+                          <mo>−</mo>
+                          <mn>17</mn>
+                          <mi>h</mi>
+                          <mn>30</mn>
+                        </math></mjx-assistive-mml></mjx-container></span> ngày <span class="arithmatex"><mjx-container
+                      class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="4"
+                      style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX"
+                        aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-texatom
+                          texclass="ORD"><mjx-mo class="mjx-n"><mjx-c
+                              class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c
+                            class="mjx-c39"></mjx-c></mjx-mn><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c
+                              class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c
+                            class="mjx-c32"></mjx-c><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c32"></mjx-c><mjx-c
+                            class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on"
+                        display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                          <mn>3</mn>
+                          <mrow data-mjx-texclass="ORD">
+                            <mo>/</mo>
+                          </mrow>
+                          <mn>9</mn>
+                          <mrow data-mjx-texclass="ORD">
+                            <mo>/</mo>
+                          </mrow>
+                          <mn>2022</mn>
+                        </math></mjx-assistive-mml></mjx-container></span> tại trung tâm Tmath.</li>
+                <li>Ban tổ chức hoàn thành các thủ tục dự thi trước <span class="arithmatex"><mjx-container
+                      class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="5"
+                      style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX"
+                        aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c
+                            class="mjx-c38"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c
+                            class="mjx-c210E TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on"
+                        display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                          <mn>18</mn>
+                          <mi>h</mi>
+                        </math></mjx-assistive-mml></mjx-container></span> ngày <span class="arithmatex"><mjx-container
+                      class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="6"
+                      style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX"
+                        aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c34"></mjx-c></mjx-mn><mjx-texatom
+                          texclass="ORD"><mjx-mo class="mjx-n"><mjx-c
+                              class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c
+                            class="mjx-c39"></mjx-c></mjx-mn><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c
+                              class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c
+                            class="mjx-c32"></mjx-c><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c32"></mjx-c><mjx-c
+                            class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on"
+                        display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                          <mn>4</mn>
+                          <mrow data-mjx-texclass="ORD">
+                            <mo>/</mo>
+                          </mrow>
+                          <mn>9</mn>
+                          <mrow data-mjx-texclass="ORD">
+                            <mo>/</mo>
+                          </mrow>
+                          <mn>2022</mn>
+                        </math></mjx-assistive-mml></mjx-container></span>.</li>
+                <li>Cuộc thi sẽ chính thức diễn ra vào <span class="arithmatex"><mjx-container
+                      class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="7"
+                      style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX"
+                        aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c
+                            class="mjx-c34"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c
+                            class="mjx-c210E TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on"
+                        display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                          <mn>14</mn>
+                          <mi>h</mi>
+                        </math></mjx-assistive-mml></mjx-container></span> ngày <span class="arithmatex"><mjx-container
+                      class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="8"
+                      style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX"
+                        aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c35"></mjx-c></mjx-mn><mjx-texatom
+                          texclass="ORD"><mjx-mo class="mjx-n"><mjx-c
+                              class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c
+                            class="mjx-c39"></mjx-c></mjx-mn><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c
+                              class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c
+                            class="mjx-c32"></mjx-c><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c32"></mjx-c><mjx-c
+                            class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on"
+                        display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                          <mn>5</mn>
+                          <mrow data-mjx-texclass="ORD">
+                            <mo>/</mo>
+                          </mrow>
+                          <mn>9</mn>
+                          <mrow data-mjx-texclass="ORD">
+                            <mo>/</mo>
+                          </mrow>
+                          <mn>2022</mn>
+                        </math></mjx-assistive-mml></mjx-container></span> tại trường THPT Lê Viết Thuật.</li>
+                <li>Chấm thi: <span class="arithmatex"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML"
+                      tabindex="0" ctxtmenu_counter="9" style="font-size: 113.1%; position: relative;"><mjx-math
+                        class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c
+                            class="mjx-c37"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c
+                            class="mjx-c210E TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on"
+                        display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                          <mn>17</mn>
+                          <mi>h</mi>
+                        </math></mjx-assistive-mml></mjx-container></span> ngày <span class="arithmatex"><mjx-container
+                      class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="10"
+                      style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX"
+                        aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c35"></mjx-c></mjx-mn><mjx-texatom
+                          texclass="ORD"><mjx-mo class="mjx-n"><mjx-c
+                              class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c
+                            class="mjx-c39"></mjx-c></mjx-mn><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c
+                              class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c
+                            class="mjx-c32"></mjx-c><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c32"></mjx-c><mjx-c
+                            class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on"
+                        display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                          <mn>5</mn>
+                          <mrow data-mjx-texclass="ORD">
+                            <mo>/</mo>
+                          </mrow>
+                          <mn>9</mn>
+                          <mrow data-mjx-texclass="ORD">
+                            <mo>/</mo>
+                          </mrow>
+                          <mn>2022</mn>
+                        </math></mjx-assistive-mml></mjx-container></span>.</li>
+                <li>Công bố kết quả: <span class="arithmatex"><mjx-container class="MathJax CtxtMenu_Attached_0"
+                      jax="CHTML" tabindex="0" ctxtmenu_counter="11"
+                      style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX"
+                        aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c
+                            class="mjx-c38"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c
+                            class="mjx-c210E TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on"
+                        display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                          <mn>18</mn>
+                          <mi>h</mi>
+                        </math></mjx-assistive-mml></mjx-container></span> ngày <span class="arithmatex"><mjx-container
+                      class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="12"
+                      style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX"
+                        aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c35"></mjx-c></mjx-mn><mjx-texatom
+                          texclass="ORD"><mjx-mo class="mjx-n"><mjx-c
+                              class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c
+                            class="mjx-c39"></mjx-c></mjx-mn><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c
+                              class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c
+                            class="mjx-c32"></mjx-c><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c32"></mjx-c><mjx-c
+                            class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on"
+                        display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                          <mn>5</mn>
+                          <mrow data-mjx-texclass="ORD">
+                            <mo>/</mo>
+                          </mrow>
+                          <mn>9</mn>
+                          <mrow data-mjx-texclass="ORD">
+                            <mo>/</mo>
+                          </mrow>
+                          <mn>2022</mn>
+                        </math></mjx-assistive-mml></mjx-container></span>.</li>
+                <li>Gala tổng kết và trao thưởng: <span class="arithmatex"><mjx-container
+                      class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="13"
+                      style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX"
+                        aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c
+                            class="mjx-c39"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c
+                            class="mjx-c210E TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on"
+                        display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                          <mn>19</mn>
+                          <mi>h</mi>
+                        </math></mjx-assistive-mml></mjx-container></span> ngày <span class="arithmatex"><mjx-container
+                      class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="14"
+                      style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX"
+                        aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c35"></mjx-c></mjx-mn><mjx-texatom
+                          texclass="ORD"><mjx-mo class="mjx-n"><mjx-c
+                              class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c
+                            class="mjx-c39"></mjx-c></mjx-mn><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c
+                              class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mn class="mjx-n"><mjx-c
+                            class="mjx-c32"></mjx-c><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c32"></mjx-c><mjx-c
+                            class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on"
+                        display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                          <mn>5</mn>
+                          <mrow data-mjx-texclass="ORD">
+                            <mo>/</mo>
+                          </mrow>
+                          <mn>9</mn>
+                          <mrow data-mjx-texclass="ORD">
+                            <mo>/</mo>
+                          </mrow>
+                          <mn>2022</mn>
+                        </math></mjx-assistive-mml></mjx-container></span> tại Nhà khách Nghệ An.</li>
+              </ul>
+              <p><noscript>&lt;img alt="👉" class="emojione"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f449.png"
+                  title=":point_right:"&gt;</noscript><img alt="👉" class="emojione unveil"
+                  data-src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f449.png"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f449.png"
+                  title=":point_right:"> <strong>LƯU Ý: THÍ SINH TỰ CHUẨN BỊ LAPTOP, SẠC PIN, Ổ CẮM CHUYỀN.</strong></p>
+              <p><noscript>&lt;img alt="🏆" class="emojione"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f3c6.png"
+                  title=":trophy:"&gt;</noscript><img alt="🏆" class="emojione unveil"
+                  data-src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f3c6.png"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f3c6.png" title=":trophy:"> Cơ
+                cấu giải thưởng: Tổng giải thưởng lên đến 20 triệu đồng.</p>
+              <p>Rất mong chờ sự tham gia tích cực của các bạn trẻ!</p>
+              <h2><strong>TMATH EDU - Nuôi dưỡng đam mê TOÁN TIN!</strong></h2>
+              <p>Mọi ý kiến đóng góp về cuộc thi, phụ huynh và thí sinh có thể liên hệ với BTC tại: </p>
+              <p><noscript>&lt;img alt="🏫" class="emojione"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f3eb.png"
+                  title=":school:"&gt;</noscript><img alt="🏫" class="emojione unveil"
+                  data-src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f3eb.png"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f3eb.png" title=":school:">
+                Trung tâm: Trung tâm giáo dục Tmath Edu, 9/6 đường Nguyễn Thị Minh Khai, Tp. Vinh, Nghệ An. </p>
+              <p><noscript>&lt;img alt="🌐" class="emojione"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f310.png"
+                  title=":globe_with_meridians:"&gt;</noscript><img alt="🌐" class="emojione unveil"
+                  data-src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f310.png"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f310.png"
+                  title=":globe_with_meridians:"> Fanpage: TMATH EDU </p>
+              <p><noscript>&lt;img alt="☎️" class="emojione"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/260e.png"
+                  title=":telephone:"&gt;</noscript><img alt="☎️" class="emojione unveil"
+                  data-src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/260e.png"
+                  src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/260e.png" title=":telephone:">
+                Hotline: 0983420518(Mr Toàn); 0973044327 (Mrs Hiền).</p>
+              <p><noscript>&lt;img alt=""
+                  src="/media/martor/ad6e318f-5a47-47e6-bde7-08d014f2323f.jpg"&gt;</noscript><img alt="" class="unveil"
+                  data-src="/media/martor/ad6e318f-5a47-47e6-bde7-08d014f2323f.jpg"
+                  src="/media/martor/ad6e318f-5a47-47e6-bde7-08d014f2323f.jpg"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col h-full col-span-1 gap-4 p-4 basis-1/3">
+        <div class="">
+          <div class="flex items-center p-4 text-white bg-dark-blue rounded-t-md">
+            <div class="flex-1 text-2xl font-bold">
+              Ongoing contests
+            </div>
+            <div class="">
+              <i class="fa-regular fa-trophy"></i>
+            </div>
+          </div>
+          <div
+            class="px-2 overflow-y-auto border divide-y border-dark-blue divide-gray-500/25 rounded-b-md max-h-96">
+            <div class="py-5 text-3xl text-center ">
+              <i class="fa-regular fa-spinner animate-spin"></i>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="flex items-center p-4 text-white bg-dark-blue rounded-t-md">
+            <div class="flex-1 text-2xl font-bold">
+              Upcomming contests
+            </div>
+            <div class="">
+              <i class="fa-regular fa-trophy"></i>
+            </div>
+          </div>
+          <div class="px-2 overflow-y-auto border divide-y border-dark-blue divide-gray-500/25 rounded-b-md max-h-96">
+            <div class="py-5 text-center border-b border-red-50">
+              <div class="text-xl font-semibold">
+                <a href="/contest/d1t0123">D1 - Bài tập tháng 01/2023</a>
+              </div>
+              <div class="text-gray-500 time">
+                Ends in <span data-secs="1659564.245376" class="time-remaining">19 days 04:56:00</span>.
+              </div>
+            </div>
+            <div class="py-5 text-center border-b border-red-50">
+              <div class="text-xl font-semibold">
+                <a href="/contest/yt0123">Y - Bài tập tháng 01/2023</a>
+              </div>
+              <div class="text-gray-500 time">
+                Ends in <span data-secs="1659564.245007" class="time-remaining">19 days 04:56:00</span>.
+              </div>
+            </div>
+            <div class="py-5 text-center border-b border-red-50">
+              <div class="text-xl font-semibold">
+                <a href="/contest/c1t123">C1 - Bài tập tháng 01/2023</a>
+              </div>
+              <div class="text-gray-500 time">
+                Ends in <span data-secs="1659564.244704" class="time-remaining">19 days 04:56:00</span>.
+              </div>
+            </div>
+            <div class="py-5 text-center border-b border-red-50">
+              <div class="text-xl font-semibold">
+                <a href="/contest/a009012023">A0 - Buổi 19 - Ôn tập giữa kì(2)</a>
+              </div>
+              <div class="text-gray-500 time">
+                Ends in <span data-secs="100824.244407" class="time-remaining">1 day 03:57:00</span>.
+              </div>
+            </div>
+            <div class="py-5 text-center border-b border-red-50">
+              <div class="text-xl font-semibold">
+                <a href="/contest/k56100123">K56A3 - Tuần 18 - Cấu trúc dữ liệu 1</a>
+              </div>
+              <div class="text-gray-500 time">
+                Ends in <span data-secs="135024.244087" class="time-remaining">1 day 13:27:00</span>.
+              </div>
+            </div>
+            <div class="py-5 text-center border-b border-red-50">
+              <div class="text-xl font-semibold">
+                <a href="/contest/a0071120221">A0 - Buổi 3 - Kiến thức cơ bản 2</a>
+              </div>
+              <div class="text-gray-500 time">
+                Ends in <span data-secs="165624.2438" class="time-remaining">1 day 21:57:00</span>.
+              </div>
+            </div>
+            <div class="py-5 text-center border-b border-red-50">
+              <div class="text-xl font-semibold">
+                <a href="/contest/a211012023">AA6 - Chuyên đề buổi 1 - Hàm và số học</a>
+              </div>
+              <div class="text-gray-500 time">
+                Ends in <span data-secs="61224.243447" class="time-remaining">16:57:00</span>.
+              </div>
+            </div>
+            <div class="py-5 text-center border-b border-red-50">
+              <div class="text-xl font-semibold">
+                <a href="/contest/aa9110123">AA9 - Buổi 27 - Xâu kí tự (3)</a>
+              </div>
+              <div class="text-gray-500 time">
+                Ends in <span data-secs="270024.243148" class="time-remaining">3 days 02:57:00</span>.
+              </div>
+            </div>
+            <div class="py-5 text-center border-b border-red-50">
+              <div class="text-xl font-semibold">
+                <a href="/contest/k55120123">K55 - Tuần 18 - Đồ thị - Luyện tập tổng hợp</a>
+              </div>
+              <div class="text-gray-500 time">
+                Ends in <span data-secs="79224.242862" class="time-remaining">21:57:00</span>.
+              </div>
+            </div>
+            <div class="py-5 text-center border-b border-red-50">
+              <div class="text-xl font-semibold">
+                <a href="/contest/b5120123">B5 - Buổi 21 - Luyện tập</a>
+              </div>
+              <div class="text-gray-500 time">
+                Ends in <span data-secs="76859.242596" class="time-remaining">21:17:35</span>.
+              </div>
+            </div>
+            <div class="py-5 text-center border-b border-red-50">
+              <div class="text-xl font-semibold">
+                <a href="/contest/aa1111012023">AA11 - Buổi 28 - Mảng một chiều (2)</a>
+              </div>
+              <div class="text-gray-500 time">
+                Ends in <span data-secs="187224.242312" class="time-remaining">2 days 03:57:00</span>.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

@@ -17,7 +17,7 @@
       <img src="https://c.tmath.vn/static/icons/logo.svg" alt="" />
     </a>
     <div
-      class="relative block w-16 py-3 text-center text-white transition-all duration-500 ease-in-out bg-indigo-600 rounded-md lg:w-24">
+      class="relative block w-16 py-3 text-center text-white transition-all duration-500 ease-in-out rounded-md hover:bg-indigo-600/50 lg:w-24">
       <a href="#" class="p-4">
         <i class="text-xl fa-duotone fa-book-open lg:text-2xl"></i>
       </a>
@@ -86,10 +86,10 @@
         Admin</div>
     </div>
   </nav>
-  <main class="flex flex-col h-full ml-24 transition-all duration-500 ease-in-out bg-slate-100 lg:ml-32">
+  <main class="flex flex-col h-full min-h-screen ml-24 transition-all duration-500 ease-in-out bg-slate-100 lg:ml-32">
     <div class="sticky top-0 z-50 flex items-center justify-between px-4 py-4 bg-white">
       <div class="text-3xl font-bold">
-        Trang chủ
+        Đăng nhập
       </div>
       <div class="flex space-x-3 group">
         <div class="relative">
@@ -110,47 +110,54 @@
         </div>
       </div>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-3">
-      <div class="flex flex-col h-full col-span-2 gap-4 p-4 border-r basis-2/3">
-        <div class="flex items-center p-4 text-2xl text-white rounded-md bg-dark-blue">
-          <div class="flex-1 font-bold">
-            News
-          </div>
-          <i class="fa-duotone fa-terminal"></i>
+    <div class="flex items-center justify-center min-h-full px-4 py-12 sm:px-6 lg:px-8">
+      <div class="w-full max-w-md space-y-8">
+        <div>
+          <img class="w-auto h-12 mx-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
+          <h2 class="mt-6 text-3xl font-bold tracking-tight text-center text-gray-900">Sign in to your account</h2>
         </div>
-      </div>
-      <div class="flex flex-col h-full col-span-1 gap-4 p-4 basis-1/3">
-        <div class="">
-          <div class="flex items-center p-4 text-white bg-dark-blue rounded-t-md">
-            <div class="flex-1 text-2xl font-bold">
-              Ongoing contests
+        <form class="p-8 mt-8 space-y-6 bg-white rounded-lg" action="#" method="POST">
+          <div class="space-y-4 shadow-sm">
+            <div>
+              <label for="username" class="font-semibold text-gray-700">Username</label>
+              <div class="relative">
+                <input id="username" name="username" type="text" autocomplete="username" required class="relative block w-full px-10 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-md appearance-none focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Username">
+                <span class="absolute left-0 z-10 w-8 translate-x-1/2 -translate-y-1/2 top-1/2">
+                  <i class="fa-duotone fa-user"></i>
+                </span>
+              </div>
             </div>
-            <div class="">
-              <i class="fa-duotone fa-trophy"></i>
-            </div>
-          </div>
-          <div
-            class="px-2 overflow-y-auto border divide-y border-dark-blue divide-gray-500/25 rounded-b-md max-h-96">
-            <div class="py-5 text-3xl text-center ">
-              <i class="fa-duotone fa-spinner animate-spin"></i>
-            </div>
-          </div>
-        </div>
-        <div class="">
-          <div class="flex items-center p-4 text-white bg-dark-blue rounded-t-md">
-            <div class="flex-1 text-2xl font-bold">
-              Upcomming contests
-            </div>
-            <div class="">
-              <i class="fa-duotone fa-trophy"></i>
+            <div>
+              <label for="password" class="font-semibold text-gray-700">Password</label>
+              <div class="relative">
+                <input id="password" name="password" type="password" autocomplete="current-password" required class="relative block w-full px-10 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-md appearance-none focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Password">
+                <span class="absolute left-0 z-10 w-8 translate-x-1/2 -translate-y-1/2 top-1/2">
+                  <i class="fa-duotone fa-lock"></i>
+                </span>
+              </div>
             </div>
           </div>
-          <div class="px-2 overflow-y-auto border divide-y border-dark-blue divide-gray-500/25 rounded-b-md max-h-96">
-            <div class="py-5 text-3xl text-center ">
-              <i class="fa-duotone fa-spinner animate-spin"></i>
+    
+          <div class="flex items-center justify-between">
+            <div class="flex items-center">
+              <input id="remember-me" name="remember-me" type="checkbox" class="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+              <label for="remember-me" class="block ml-2 text-sm text-gray-900">Remember me</label>
+            </div>
+    
+            <div class="text-sm">
+              <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Forgot your password?</a>
             </div>
           </div>
-        </div>
+    
+          <div>
+            <button type="submit" class="relative flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md group hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                <i class="text-indigo-500 fa-duotone fa-lock-open group-hover:text-indigo-400"></i>
+              </span>
+              Sign in
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </main>
